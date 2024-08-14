@@ -1,0 +1,15 @@
+Label
+Button
+VBoxContainer
+MarginContainer
+CollisionShape2D
+Area2D
+Node
+CanvasLayer
+AnimationPlayer
+Marker2D
+Sprite2D
+ParallaxLayer
+ParallaxBackground
+AnimatedSprite2D
+AnimatableBody2D

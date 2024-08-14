@@ -1,0 +1,11 @@
+res://enemies/enemy_bullet.tscn::7554e7c9818bd6df7c0234d6b715223b::1723466808::res://.godot/exported/133200997/export-5cb0c070e9bfbb4106bc5e855bc40880-enemy_bullet.scn
+res://enemies/melee_enemy.tscn::9fc02ece71973d7175dc818b297fe707::1723581324::res://.godot/exported/133200997/export-2d7b2269201347cb4f699eb1503d25ca-melee_enemy.scn
+res://enemies/spike_trap2.tscn::15d8c5fdb2761633e69abd70b25108b4::1723581324::res://.godot/exported/133200997/export-87fbbc6bd47f036a38502ddfc7b6f98c-spike_trap2.scn
+res://enemies/spike_trap.tscn::83f6893c56553fb511063d20dcdb3339::1723466808::res://.godot/exported/133200997/export-09b8b7134983d474a9b4d880c6fb0a56-spike_trap.scn
+res://enemies/static_enemy.tscn::d515fc4be96eb68e64790344a90527ee::1723466808::res://.godot/exported/133200997/export-133f1cf5de50fa5ac2efeaaa6988bb0c-static_enemy.scn
+res://levels/platform.tscn::5aff3bffe1aa16fcc1076c7af09a2996::1723581324::res://.godot/exported/133200997/export-60804aeed5a423e384a4f953fafc2525-platform.scn
+res://levels/test_level.tscn::18eab2a8c21ea5ac57fc3a92707c0322::1723583530::res://.godot/exported/133200997/export-cbad488a0be06ad105ee2fe72dc64c58-test_level.scn
+res://player/bullet.tscn::1982c89ba8ecc931f048602ad42973e0::1723466808::res://.godot/exported/133200997/export-ccbd35e6f72058f9e5d89a0d1cb3e691-bullet.scn
+res://player/player.tscn::0357276e81a1391dba2fc3d7f45dc65e::1723466808::res://.godot/exported/133200997/export-753d15e03e0182f9d550ac833b42bb41-player.scn
+res://game_manager.tscn::cce89c83d8ca5ba14d778c7e2c06bedb::1723583530::res://.godot/exported/133200997/export-bd5ff995e4b5bf3753a213b334e1b8c4-game_manager.scn
+res://main_menu.tscn::b7ea99f0fc489377742efd2785cb908f::1723583530::res://.godot/exported/133200997/export-8b03550a1e82db90fe95208a9e9dbb82-main_menu.scn

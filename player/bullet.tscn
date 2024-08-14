@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvcg6o8nccmh3"]
+
+[ext_resource type="Script" path="res://player/bullet.gd" id="1_11ptv"]
+[ext_resource type="Texture2D" uid="uid://boo0nfmk6svnd" path="res://player/Lower Sprite/bullet_Sheet.png" id="2_aevc6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aju06"]
+radius = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpsgc"]
+atlas = ExtResource("2_aevc6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvjue"]
+atlas = ExtResource("2_aevc6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkxey"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpsgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvjue")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 39
+script = ExtResource("1_11ptv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_aju06")
+debug_color = Color(0.477277, 0.588359, 0, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wkxey")
+autoplay = "default"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

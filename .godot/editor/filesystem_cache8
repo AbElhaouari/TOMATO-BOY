@@ -1,0 +1,58 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1723578061
+game_manager.gd::GDScript::-1::1723574133::0::1::::<>Node2D<>::
+game_manager.tscn::PackedScene::5512036358390653984::1723578061::0::1::::<><>::res://game_manager.gd
+icon.svg::CompressedTexture2D::6468933547943521985::1722883882::1722883900::1::::<><>::
+::res://enemies/::1723578061
+enemy.gd::GDScript::-1::1723216716::0::1::::<>CharacterBody2D<>::
+enemy_bullet.gd::GDScript::-1::1723026273::0::1::::<>Area2D<>::
+enemy_bullet.tscn::PackedScene::5686310246948202504::1723466808::0::1::::<><>::res://enemies/enemy_bullet.gd<>uid://b2oaio0v2xm7u::::res://enemies/Sprites/low sprite/bullet_Sheet.png
+melee_enemy.gd::GDScript::-1::1723578061::0::1::::<>CharacterBody2D<>::
+melee_enemy.tscn::PackedScene::3451304554891857054::1723578061::0::1::::<><>::res://enemies/melee_enemy.gd<>uid://drabri1utkgbp::::res://enemies/Sprites/low sprite/melee_run_Sheet.png<>uid://cp05ygd0dtj81::::res://enemies/Sprites/low sprite/melee_idle_Sheet.png
+spike_trap2.tscn::PackedScene::4489545590928392694::1723578061::0::1::::<><>::res://enemies/spike_trap.gd<>uid://7w6m8c6oyl23::::res://enemies/Sprites/low sprite/trap2_Sheet.png
+spike_trap.gd::GDScript::-1::1723025411::0::1::::<>Area2D<>::
+spike_trap.tscn::PackedScene::3888829887060682973::1723466808::0::1::::<><>::res://enemies/spike_trap.gd<>uid://d4bc7tia3w4ny::::res://enemies/Sprites/low sprite/trap_Sheet.png
+static_enemy.tscn::PackedScene::876318197058840099::1723466808::0::1::::<><>::res://enemies/enemy.gd<>uid://c1fkekv2q5jlh::::res://enemies/Sprites/low sprite/ranged_shoot_Sheet.png<>uid://uc7calvrbamx::::res://enemies/Sprites/low sprite/ranger_idle_Sheet.png
+::res://enemies/Sprites/::1723460891
+Enemy_Idle_Sprite.png::CompressedTexture2D::1919538896527816477::1723204551::1723209981::1::::<><>::
+Enemy_Run_Sprite.png::CompressedTexture2D::3281733344020473351::1723204963::1723209981::1::::<><>::
+Static_enemy-Shoot_Sprite.png::CompressedTexture2D::3806887373915270974::1723201797::1723209981::1::::<><>::
+Static_enemy_Idle_Sprite.png::CompressedTexture2D::4275382946460523899::1723200507::1723209981::1::::<><>::
+trap.png::CompressedTexture2D::8167748643860176874::1723209939::1723209981::1::::<><>::
+::res://enemies/Sprites/low sprite/::1723465970
+bullet_Sheet.png::CompressedTexture2D::4310435811766207820::1723465968::1723465970::1::::<><>::
+melee_idle_Sheet.png::CompressedTexture2D::5879148155560060744::1723461149::1723465319::1::::<><>::
+melee_run_Sheet.png::CompressedTexture2D::8352563929701218249::1723461100::1723465319::1::::<><>::
+ranged_shoot_Sheet.png::CompressedTexture2D::6608688062772349105::1723461689::1723465319::1::::<><>::
+ranger_idle_Sheet.png::CompressedTexture2D::1409852161594853799::1723461696::1723465319::1::::<><>::
+trap2_Sheet.png::CompressedTexture2D::2293364701097297886::1723465198::1723465319::1::::<><>::
+trap_Sheet.png::CompressedTexture2D::9196982484067195830::1723462712::1723465319::1::::<><>::
+::res://levels/::1723578061
+GROUND TILESET.png::CompressedTexture2D::8541852678892574448::1723209796::1723209982::1::::<><>::
+platform.tscn::PackedScene::8085792849099556339::1723578061::0::1::::<><>::uid://ba2jefe10cnkr::::res://levels/low pixel/platform.png
+test_level.tscn::PackedScene::6335518534660783831::1723578061::0::1::::<><>::uid://ce04xbu08tthn::::res://player/player.tscn<>uid://dn77c22h0xyyl::::res://levels/TX Tileset Stone Ground.png<>uid://mqq3ktociwv8::::res://enemies/static_enemy.tscn<>uid://dtx0ch47rwmyq::::res://levels/GROUND TILESET.png<>uid://bpf3qm61fwwre::::res://enemies/melee_enemy.tscn<>uid://bvn1pv31osief::::res://enemies/spike_trap.tscn<>uid://wt1x1xuy0yh6::::res://levels/low pixel/test1_Sheet.png<>uid://cksco0epe0rk7::::res://game_manager.tscn<>uid://3rmktjkwyx3m::::res://levels/low pixel/bg1.png<>uid://dng23d4rtg5jj::::res://levels/platform.tscn<>uid://b56xd434nr5gb::::res://levels/low pixel/bg2.png<>uid://ocxlr8tnhuiy::::res://levels/low pixel/bg3.png<>uid://b471fo50kr5yg::::res://enemies/spike_trap2.tscn
+TX Tileset Stone Ground.png::CompressedTexture2D::8139725082052535683::1722884564::1722884574::1::::<><>::
+::res://levels/low pixel/::1723580552
+bg1.png::CompressedTexture2D::2001129517867786432::1723466901::1723467225::1::::<><>::
+bg2.png::CompressedTexture2D::4557485119192649533::1723467142::1723467225::1::::<><>::
+bg3.png::CompressedTexture2D::988189645763597600::1723467223::1723467225::1::::<><>::
+platform.png::CompressedTexture2D::2442712749174024569::1723463889::1723465319::1::::<><>::
+test1_Sheet.png::CompressedTexture2D::1584998854514985333::1723402296::1723402299::1::::<><>::
+waterfall_Sheet.png::CompressedTexture2D::8622189313926863611::1723580552::1723580555::1::::<><>::
+::res://player/::1723474445
+bullet.gd::GDScript::-1::1722969567::0::1::::<>Area2D<>::
+bullet.tscn::PackedScene::3864935604066424906::1723466808::0::1::::<><>::res://player/bullet.gd<>uid://boo0nfmk6svnd::::res://player/Lower Sprite/bullet_Sheet.png
+player.gd::GDScript::-1::1723474445::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::5107008136440058255::1723466808::0::1::::<><>::res://player/player.gd<>uid://b7ammus3gkcmy::::res://player/Lower Sprite/Idle_Sheet.png<>uid://dlegmjluyvlgv::::res://player/Lower Sprite/Jump_Sheet.png<>uid://d1iu4i0igm6sd::::res://player/Lower Sprite/Run_Sheet.png<>uid://bcqmlmhsimbfs::::res://player/Lower Sprite/Idle_shoot_Sheet.png<>uid://c4pbnpmaep458::::res://player/Lower Sprite/Run_Shoot_Sheet.png
+::res://player/Lower Sprite/::1723465319
+bullet_Sheet.png::CompressedTexture2D::3399507204973233105::1723462372::1723465319::1::::<><>::
+Idle_Sheet.png::CompressedTexture2D::4633214793104281704::1723400963::1723400993::1::::<><>::
+Idle_shoot_Sheet.png::CompressedTexture2D::2560577304603107616::1723400970::1723400993::1::::<><>::
+Jump_Sheet.png::CompressedTexture2D::7939983064241974773::1723400878::1723400884::1::::<><>::
+Run_Sheet.png::CompressedTexture2D::9001953594758115683::1723400989::1723400993::1::::<><>::
+Run_Shoot_Sheet.png::CompressedTexture2D::6839368237907442633::1723401104::1723401107::1::::<><>::
+::res://player/PlayerSprits/::1723209982
+Idle_Animation_Sprite.png::CompressedTexture2D::4509572224135551624::1723198703::1723209982::1::::<><>::
+Run_Animation_Sprite.png::CompressedTexture2D::1682850243490012995::1723198690::1723209982::1::::<><>::
+Shoot_Idle_Animation_Sprite.png::CompressedTexture2D::7715145842925198505::1723199494::1723209982::1::::<><>::
+Shoot_Run_Animation_Sprite.png::CompressedTexture2D::4883675825466518971::1723198994::1723209982::1::::<><>::

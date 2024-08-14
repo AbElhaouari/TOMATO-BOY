@@ -1,0 +1,193 @@
+[gd_scene load_steps=22 format=3 uid="uid://bpf3qm61fwwre"]
+
+[ext_resource type="Script" path="res://enemies/melee_enemy.gd" id="1_57lkf"]
+[ext_resource type="Texture2D" uid="uid://drabri1utkgbp" path="res://enemies/Sprites/low sprite/melee_run_Sheet.png" id="2_614el"]
+[ext_resource type="Texture2D" uid="uid://cp05ygd0dtj81" path="res://enemies/Sprites/low sprite/melee_idle_Sheet.png" id="3_tioa2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8ovw"]
+atlas = ExtResource("2_614el")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paduo"]
+atlas = ExtResource("2_614el")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjd63"]
+atlas = ExtResource("2_614el")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmu2t"]
+atlas = ExtResource("2_614el")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taili"]
+atlas = ExtResource("2_614el")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wojxs"]
+atlas = ExtResource("3_tioa2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iglrk"]
+atlas = ExtResource("3_tioa2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq0tc"]
+atlas = ExtResource("3_tioa2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdm3p"]
+atlas = ExtResource("3_tioa2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1boq"]
+atlas = ExtResource("3_tioa2")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyt3h"]
+atlas = ExtResource("3_tioa2")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brtqq"]
+atlas = ExtResource("3_tioa2")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hsl6"]
+atlas = ExtResource("3_tioa2")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7qjp"]
+atlas = ExtResource("3_tioa2")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ko16p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8ovw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paduo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjd63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmu2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taili")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wojxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iglrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq0tc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdm3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1boq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyt3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brtqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hsl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7qjp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35gh7"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7dwq7"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qu7a"]
+size = Vector2(99, 17.5)
+
+[node name="Melee_Enemy" type="CharacterBody2D"]
+collision_layer = 33
+script = ExtResource("1_57lkf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_ko16p")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.765983
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -6)
+shape = SubResource("CircleShape2D_35gh7")
+
+[node name="Enemy_Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Hitbox"]
+position = Vector2(1, -7)
+shape = SubResource("CircleShape2D_7dwq7")
+debug_color = Color(0.9827, 0, 0.359816, 0.42)
+
+[node name="Detect_player_area_left" type="Area2D" parent="."]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_player_area_left"]
+position = Vector2(-48.5, -8.25)
+shape = SubResource("RectangleShape2D_8qu7a")
+
+[node name="Detect_player_area_right" type="Area2D" parent="."]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_player_area_right"]
+position = Vector2(51, -8.25)
+shape = SubResource("RectangleShape2D_8qu7a")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -8.0
+offset_top = -21.0
+offset_right = 8.0
+offset_bottom = -17.0
+grow_horizontal = 2
+value = 100.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="area_entered" from="Enemy_Hitbox" to="." method="_on_enemy_hitbox_area_entered"]
+[connection signal="body_entered" from="Enemy_Hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="Enemy_Hitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="body_entered" from="Detect_player_area_left" to="." method="_on_detect_player_area_left_body_entered"]
+[connection signal="body_exited" from="Detect_player_area_left" to="." method="_on_detect_player_area_left_body_exited"]
+[connection signal="body_entered" from="Detect_player_area_right" to="." method="_on_detect_player_area_body_entered"]
+[connection signal="body_entered" from="Detect_player_area_right" to="." method="_on_detect_player_area_right_body_entered"]
+[connection signal="body_exited" from="Detect_player_area_right" to="." method="_on_detect_player_area_right_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

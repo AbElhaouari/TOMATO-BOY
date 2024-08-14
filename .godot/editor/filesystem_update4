@@ -1,0 +1,9 @@
+res://levels/test_level.tscn
+res://levels/platform.tscn
+res://enemies/spike_trap2.tscn
+res://enemies/melee_enemy.gd
+res://game_manager.gd
+res://game_manager.tscn
+res://enemies/melee_enemy.tscn
+res://main_menu.gd
+res://main_menu.tscn

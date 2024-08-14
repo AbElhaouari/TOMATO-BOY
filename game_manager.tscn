@@ -1,0 +1,113 @@
+[gd_scene load_steps=2 format=3 uid="uid://cksco0epe0rk7"]
+
+[ext_resource type="Script" path="res://game_manager.gd" id="1_3wipt"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_3wipt")
+
+[node name="gameOver_canvas" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="gameOver_canvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.113725)
+
+[node name="Label" type="Label" parent="gameOver_canvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 186.0
+offset_right = 172.0
+offset_bottom = 269.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="gameOver_canvas"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -111.0
+offset_top = -271.0
+offset_right = 136.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Restart?"
+
+[node name="exit" type="Button" parent="gameOver_canvas"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -187.0
+offset_right = 139.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quit"
+
+[node name="youWon_canvas" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="youWon_canvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.113725)
+
+[node name="Label" type="Label" parent="youWon_canvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 186.0
+offset_right = 172.0
+offset_bottom = 269.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "You Finished"
+
+[node name="won_Button" type="Button" parent="youWon_canvas"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -113.0
+offset_top = -274.0
+offset_right = 138.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Restart"
+
+[node name="exit" type="Button" parent="youWon_canvas"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -113.0
+offset_top = -188.0
+offset_right = 138.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quit"
+
+[connection signal="pressed" from="gameOver_canvas/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="gameOver_canvas/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="youWon_canvas/won_Button" to="." method="_on_won_button_pressed"]
+[connection signal="pressed" from="youWon_canvas/exit" to="." method="_on_exit_pressed"]

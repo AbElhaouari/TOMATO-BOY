@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnaqx1a8m0km7"]
+
+[ext_resource type="Script" path="res://enemies/enemy_bullet.gd" id="1_0vvai"]
+[ext_resource type="Texture2D" uid="uid://b2oaio0v2xm7u" path="res://enemies/Sprites/low sprite/bullet_Sheet.png" id="2_2eah4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0tyq"]
+atlas = ExtResource("2_2eah4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uu0h"]
+atlas = ExtResource("2_2eah4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5lua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0tyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uu0h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f5g7q"]
+radius = 3.0
+
+[node name="Enemy_Bullet" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_0vvai")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 7
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_n5lua")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -7)
+shape = SubResource("CircleShape2D_f5g7q")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

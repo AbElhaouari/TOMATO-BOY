@@ -1,0 +1,156 @@
+[gd_scene load_steps=18 format=3 uid="uid://mqq3ktociwv8"]
+
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_xevd6"]
+[ext_resource type="Texture2D" uid="uid://c1fkekv2q5jlh" path="res://enemies/Sprites/low sprite/ranged_shoot_Sheet.png" id="2_45fk3"]
+[ext_resource type="Texture2D" uid="uid://uc7calvrbamx" path="res://enemies/Sprites/low sprite/ranger_idle_Sheet.png" id="3_eaey8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7yj7"]
+atlas = ExtResource("2_45fk3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fl4k"]
+atlas = ExtResource("2_45fk3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av5cv"]
+atlas = ExtResource("2_45fk3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luvpq"]
+atlas = ExtResource("2_45fk3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiwbq"]
+atlas = ExtResource("2_45fk3")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aha3p"]
+atlas = ExtResource("3_eaey8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s6dx"]
+atlas = ExtResource("3_eaey8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74acv"]
+atlas = ExtResource("3_eaey8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8wkp"]
+atlas = ExtResource("3_eaey8")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckufi"]
+atlas = ExtResource("3_eaey8")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ypb5h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7yj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fl4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av5cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luvpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oiwbq")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aha3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s6dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74acv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8wkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckufi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cu688"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1xypw"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bw7sh"]
+size = Vector2(408.5, 46)
+
+[node name="Static_Enemy" type="CharacterBody2D"]
+script = ExtResource("1_xevd6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_ypb5h")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0374213
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_cu688")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_1xypw")
+debug_color = Color(0.98155, 0, 0.370078, 0.42)
+
+[node name="Detect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+position = Vector2(-204.25, -22)
+shape = SubResource("RectangleShape2D_bw7sh")
+debug_color = Color(0, 0.649563, 0.138313, 0.42)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-10, -3)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.1
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -8.0
+offset_top = -20.0
+offset_right = 8.0
+offset_bottom = -16.0
+grow_horizontal = 2
+value = 100.0
+show_percentage = false
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="Detect" to="." method="_on_detect_body_entered"]
+[connection signal="body_exited" from="Detect" to="." method="_on_detect_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
